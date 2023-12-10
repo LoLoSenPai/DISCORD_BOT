@@ -8,9 +8,7 @@ module.exports = async (client, fs) => {
         for (let category of commands) {
             const files = fs.readdirSync(`./Client/Commands/${category}`);
             for (let file of files) {
-                console.log(`Loading command from file: ${file}`);
                 const inside_file = require(`../Commands/${category}/${file}`);
-                console.log(inside_file.data);
 
                 client.commands.set(inside_file.data.name, inside_file);
                 client.slashArray.push(inside_file.data.toJSON());

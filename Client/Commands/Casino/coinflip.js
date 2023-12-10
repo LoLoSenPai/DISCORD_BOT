@@ -1,7 +1,7 @@
 const { SlashCommandBuilder, Client, ChatInputCommandInteraction, EmbedBuilder } = require('discord.js');
-const User = require('./Client/Models/User');
-const { sendTransactionToWinner, sendTransactionToTreasury } = require('./Client/utils/transactionFunctions');
-const { decrypt } = require('./Client/utils/encryptionUtils');
+const User = require('../../Models/User');
+const { sendTransactionToWinner, sendTransactionToTreasury } = require('../../utils/transactionFunctions');
+const { decrypt } = require('../../utils/encryptionUtils');
 
 module.exports = {
     data: new SlashCommandBuilder()
