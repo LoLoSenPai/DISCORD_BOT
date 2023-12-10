@@ -20,7 +20,11 @@ client.slashArray = [];
 client.login(token);
 
 fs.readdirSync('./Client/Handlers').forEach(handler => {
-	require(`./Client/Handlers/${handler}`)(client, fs);
+	try {
+		require(`./Client/Handlers/${handler}`)(client, fs);
+	} catch (error) {
+		console.error(`Error loading handler ${handler}:`, error);
+	}
 });
 
 client.function = {
