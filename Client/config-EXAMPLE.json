@@ -2,5 +2,8 @@
 	"token": "",
 	"clientId": "",
     "mongoURI": "",
-	"simpleHashAPI": ""
+	"simpleHashAPI": "",
+	"ENCRYPTION_KEY": "",
+	"TREASURY_WALLET_PUBLIC_KEY": "",
+	"TREASURY_WALLET_PRIVATE_KEY": ""
 }
