@@ -1,12 +1,16 @@
+const path = require('path');
+
 module.exports = (client, fs) => {
+    const selectsPath = path.join(__dirname, '..', 'Selects');
+    const selectsCategories = fs.readdirSync(selectsPath);
 
-    const selects = fs.readdirSync('./Client/Selects');
-    for (let category of selects) {
+    for (let category of selectsCategories) {
+        const categoryPath = path.join(selectsPath, category);
+        const files = fs.readdirSync(categoryPath);
 
-        const files = fs.readdirSync(`./Client/Selects/${category}`);
         for (let file of files) {
-
-            const inside_file = require(`../Selects/${category}/${file}`);
+            const filePath = path.join(categoryPath, file);
+            const inside_file = require(filePath);
 
             if (inside_file.id) {
                 client.selects.set(inside_file.id, inside_file);
@@ -15,4 +19,4 @@ module.exports = (client, fs) => {
     }
 
     console.log(`Loaded ${client.selects.size} selects!`);
-}
+};

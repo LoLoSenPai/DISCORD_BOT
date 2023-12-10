@@ -13,6 +13,7 @@
     "@solana/web3.js": "^1.87.6",
     "discord.js": "^14.14.1",
     "fs": "^0.0.1-security",
-    "mongoose": "^8.0.3"
+    "mongoose": "^8.0.3",
+    "path": "^0.12.7"
   }
 }
